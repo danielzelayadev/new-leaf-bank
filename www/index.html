@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html ng-app="ACBank">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <title>New Leaf Bank</title>
+
+    <link href="css/ionic.app.css" rel="stylesheet">
+    <link href="img/leaf.jpg" rel="icon">
+    <link href="css/style.min.css" rel="stylesheet">
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="cordova.js"></script>
+    <script src="lib/angular-ui-router/angular-ui-router.min.js"></script>
+    <script src="lib/ng-draggable/ngDraggable.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/bundle.js"></script>
+  </head>
+  <body class="{{title}}" ng-controller="MainController as mvm">
+    <ion-pane>
+      <ion-header-bar class="bar-balanced">
+        <h1 class="title">{{title}}</h1>
+      </ion-header-bar>
+      <ion-nav-view></ion-nav-view>
+    </ion-pane>
+  </body>
+</html>

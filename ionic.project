@@ -1,0 +1,12 @@
+{
+  "name": "AC Bank App",
+  "app_id": "47d802a9",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}
