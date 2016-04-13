@@ -9,11 +9,9 @@
   .Accounts .item.item-avatar i:hover {
     color: #888; }
 
-.Accounts .add-btn {
+.Accounts .mat-btn {
   display: flex;
   position: absolute;
-  top: 90%;
-  left: 80%;
   width: 55px;
   height: 55px;
   align-items: center;
@@ -26,8 +24,23 @@
   cursor: pointer;
   z-index: 2;
   transition: 0.1s linear all; }
-  .Accounts .add-btn:hover {
+  .Accounts .mat-btn:hover {
     box-shadow: 0 0 30px #222; }
+  .Accounts .mat-btn img {
+    width: 50%;
+    height: 50%; }
+
+.Accounts .right {
+  left: 84%; }
+
+.Accounts .lowest {
+  top: 90%; }
+
+.Accounts .second-lowest {
+  top: 80%; }
+
+.Accounts .third-lowest {
+  top: 70%; }
 
 .add-account-modal label {
   border: none;

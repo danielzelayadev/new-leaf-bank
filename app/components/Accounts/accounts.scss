@@ -19,11 +19,9 @@
 
 	}
 
-	.add-btn {
-	    display: flex;
+	.mat-btn {
+		display: flex;
 	    position: absolute;
-	    top: 90%;
-	    left: 80%;
 	    width: 55px;
 	    height: 55px;
 	    align-items: center;
@@ -39,9 +37,28 @@
 
 		&:hover {
 			box-shadow: 0 0 30px #222;
-			// top: 85%;
 		}
 
+		img {
+			width: 50%;
+			height: 50%;
+		}
+	}
+
+	.right {
+		left: 84%;
+	}
+
+	.lowest {
+	    top: 90%;
+	}
+
+	.second-lowest {
+	    top: 80%;
+	}
+
+	.third-lowest {
+	    top: 70%;
 	}
 
 }
