@@ -1,0 +1,26 @@
+.add-account-modal {
+
+	ion-content {
+		// background: #fff;
+	}
+
+	label {
+		border: none;
+		border-bottom: 1px solid #fff;
+
+		span {
+			color: #fff;
+		}
+	}
+
+	input[type="text"] {
+		background: #324851;
+		color: #fff;
+	}
+
+	.button-reflection {
+		color: #fff;
+		background: #7DA3A1;
+	}
+
+}
