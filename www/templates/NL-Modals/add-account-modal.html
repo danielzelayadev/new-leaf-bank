@@ -3,21 +3,7 @@
 	  <h1 class="title">Create Account</h1>
 	</ion-header-bar>
 	<ion-content>
-		<div class="list">
-		  <label class="item item-input item-stacked-label">
-		    <span class="input-label">Account Name</span>
-		    <input type="text" placeholder="Town" ng-model="account.name">
-		  </label>
-		  <label class="item item-input item-stacked-label">
-		    <span class="input-label">Initial Bells</span>
-		    <input type="number" placeholder="100,400" min="0" ng-model="account.bells">
-		  </label>
-		  <label class="item item-input item-stacked-label">
-		    <span class="input-label">Income Percentage</span>
-		    <input type="number" placeholder="30" min="0" max="100" ng-model="account.portion">
-		  </label>
-		</div>
-		<button class="button button-full button-reflection" ng-click="vm.closeModal(0)">Cancel</button>
-		<button class="button button-full button-balanced" ng-click="vm.confirmAccountCreation(account)">Confirm</button>
+		<button class="button button-full button-reflection" ng-click="addAccountModal.hide()">Cancel</button>
+		<button class="button button-full button-balanced" ng-click="addAccountModal.hide()">Confirm</button>
 	</ion-content>
 </ion-modal-view>
