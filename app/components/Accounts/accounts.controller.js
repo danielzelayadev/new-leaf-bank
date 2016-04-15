@@ -10,7 +10,6 @@
 	function AccountsController ($scope, $ionicModal) {
 		var vm = this;
 		
-
 	}
 
 })();
