@@ -1,0 +1,11 @@
+<div class="nl-mat-menu">
+	<nl-mat-btn class="main-btn" icon-class="ion-navicon-round" 
+				clicked="toggleOptions = !toggleOptions">
+	</nl-mat-btn>
+	<nl-mat-btn ng-show="toggleOptions" 
+				ng-repeat="option in options" 
+				icon-class="{{option.iconClass}}"
+				image-source="{{option.imageSource}}" 
+				clicked="option.clicked">
+	</nl-mat-btn>
+</div>

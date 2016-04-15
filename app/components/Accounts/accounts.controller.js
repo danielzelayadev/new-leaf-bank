@@ -9,7 +9,14 @@
 
 	function AccountsController ($scope, $ionicModal) {
 		var vm = this;
-		
+
+		$scope.options = [
+			{
+				iconClass: "ion-key",
+				imageSource: "",
+				clicked: function () { console.log("Key!"); }
+			}
+		];
 	}
 
 })();
