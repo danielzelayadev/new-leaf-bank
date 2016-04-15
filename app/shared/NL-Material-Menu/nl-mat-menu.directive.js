@@ -24,7 +24,7 @@
 			scope.$watch('toggleOptions', function(cv, pv) {
 				for (let i = 0; i < scope.options.length; i++) {
 					let e = $("#opt"+i);
-					let speed = '.3s';
+					let speed = 300;
 
 					if (cv) 
 						e.animate({ 'bottom': (65*(i+1)) }, speed);
