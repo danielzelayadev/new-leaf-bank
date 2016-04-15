@@ -34,13 +34,48 @@
   left: 84%; }
 
 .Accounts .lowest {
-  top: 90%; }
+  top: 90%;
+  font-size: 2em; }
+
+.Accounts .second-lowest, .Accounts .third-lowest, .Accounts .fourth-lowest {
+  z-index: 0; }
+  .Accounts .second-lowest.ng-hide, .Accounts .third-lowest.ng-hide, .Accounts .fourth-lowest.ng-hide {
+    animation: slide-down .2s linear forwards; }
 
 .Accounts .second-lowest {
-  top: 80%; }
+  top: 80%;
+  animation: slide-up-f .2s linear forwards;
+  font-size: 2em; }
 
 .Accounts .third-lowest {
-  top: 70%; }
+  top: 70%;
+  animation: slide-up-s .2s linear forwards; }
+
+.Accounts .fourth-lowest {
+  top: 60%;
+  animation: slide-up-t .2s linear forwards; }
+
+@keyframes slide-up-f {
+  from {
+    top: 90%; }
+  to {
+    top: 80%; } }
+
+@keyframes slide-up-s {
+  from {
+    top: 90%; }
+  to {
+    top: 70%; } }
+
+@keyframes slide-up-t {
+  from {
+    top: 90%; }
+  to {
+    top: 60%; } }
+
+@keyframes slide-down {
+  to {
+    top: 90%; } }
 
 .add-account-modal label {
   border: none;
@@ -48,7 +83,7 @@
   .add-account-modal label span {
     color: #fff; }
 
-.add-account-modal input[type="text"] {
+.add-account-modal input[type="text"], .add-account-modal input[type="number"] {
   background: #324851;
   color: #fff; }
 

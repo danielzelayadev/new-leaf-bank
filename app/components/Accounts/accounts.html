@@ -6,7 +6,7 @@
 				  	<img src="img/leaf.jpg">
 				  	<h2 ng-click="vm.toggleAccountNameTb($index)" ng-hide="vm.accountNameTbs[$index]">{{account.name}}</h2>
 				  	<input type="text" ng-model="account.name" ng-show="vm.accountNameTbs[$index]" ng-blur="vm.toggleAccountNameTb($index)">
-				  	<i class="icon ion-close-round" ng-click="vm.removeAccountClicked($index)"></i>
+				  	<i class="icon ion-close-round" ng-click="vm.removeAccountClicked($index, account.name)"></i>
 			  	</span>
 			  	<span class="item item-text-wrap">
 			  		Bells: {{account.bells | currency: &apos;$ &apos;}}
@@ -17,7 +17,8 @@
 		  	</div>
 		</div>
 	</ion-content>
-	<div class="mat-btn lowest right" ng-click="vm.addAccountClicked()">+</div>
-	<div class="mat-btn second-lowest right"><img src="../img/withdraw.png"></div>
-	<div class="mat-btn third-lowest right"><img src="../img/deposit.png"></div>
+	<div class="mat-btn lowest right" ng-click="vm.toggleMenu = !vm.toggleMenu"><i ng-class="vm.toggleMenu ? 'ion-close-round' : 'ion-navicon-round'"></i></div>
+	<div class="mat-btn second-lowest right" ng-click="vm.openModal(0)" ng-show="vm.toggleMenu"><i class="ion-plus-round"></i></div>
+	<div class="mat-btn third-lowest right" ng-show="vm.toggleMenu"><img src="../img/withdraw.png"></div>
+	<div class="mat-btn fourth-lowest right" ng-click="vm.openModal(2)" ng-show="vm.toggleMenu"><img src="../img/deposit.png"></div>
 </ion-view>

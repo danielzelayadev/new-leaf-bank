@@ -51,14 +51,76 @@
 
 	.lowest {
 	    top: 90%;
+	    font-size: 2em;
+	}
+
+	.second-lowest, .third-lowest, .fourth-lowest {
+		z-index: 0;
+
+		&.ng-hide {
+	    	animation: slide-down .2s linear forwards;
+	    }
 	}
 
 	.second-lowest {
 	    top: 80%;
+	    animation: slide-up-f .2s linear forwards;
+	    font-size: 2em;
 	}
 
 	.third-lowest {
 	    top: 70%;
+	    animation: slide-up-s .2s linear forwards;
+	}
+
+	.fourth-lowest {
+	    top: 60%;
+	    animation: slide-up-t .2s linear forwards;
+	}
+
+	@keyframes slide-up-f
+	{
+	    from
+	    {
+	        top: 90%;
+	    }
+
+	    to
+	    {
+	        top: 80%;
+	    }
+	}
+	@keyframes slide-up-s
+	{
+	    from
+	    {
+	        top: 90%;
+	    }
+
+	    to
+	    {
+	        top: 70%;
+	    }
+	}
+	@keyframes slide-up-t
+	{
+	    from
+	    {
+	        top: 90%;
+	    }
+
+	    to
+	    {
+	        top: 60%;
+	    }
+	}
+
+	@keyframes slide-down
+	{
+	    to
+	    {
+	        top: 90%;
+	    }
 	}
 
 }

@@ -60,27 +60,33 @@
 
 	function AccountsController ($scope, $ionicModal) {
 		var vm = this;
+		var sumOfPortions = 0;
 
-		vm.account = {};
+		vm.mount = 0.0;
 		vm.accounts = [];
 		vm.accountNameTbs = [];
-		vm.addAccountClicked = addAccountClicked;
+		vm.openModal = openModal;
 		vm.removeAccountClicked = removeAccountClicked;
 		vm.reorder = reorder;
 		vm.toggleAccountNameTb = toggleAccountNameTb;
 		vm.closeModal = closeModal;
 		vm.confirmAccountCreation = confirmAccountCreation;
+		vm.confirmDeposit = confirmDeposit;
+
+		vm.toggleMenu = false;
 
 		$scope.vm = vm;
+		$scope.account = {};
+		$scope.modals = [];
 
-		function addAccountClicked () {
-			
-			$scope.modal.show();
-
+		function openModal (index) {
+			$scope.modals[index].show();
 		}
 
-		function removeAccountClicked ($index) {
-			if (confirm("Are you sure?")) {
+		function removeAccountClicked ($index, accountName) {
+			console.log($index);
+			if (confirm("Are you sure you want to delete " + accountName + "?")) {
+				sumOfPortions -= vm.accounts[$index].portion;
 				vm.accounts.splice($index, 1);
 			}
 		}
@@ -96,27 +102,62 @@
 			vm.accountNameTbs[$index] = !vm.accountNameTbs[$index];
 		}
 
-		function closeModal () {
-			$scope.modal.hide();
-			$scope.account = {};
+		function closeModal (index) {
+			$scope.modals[index].hide();
+
+			if (index === 0) $scope.account = {};
+
+			else if (index == 2) vm.mount = 0.0;
 		}
 
-		function confirmAccountCreation () {
-			closeModal();
-			addAccount(vm.account);
+		function confirmAccountCreation (account) {
+			closeModal(0);
+			addAccount(account);
+		}
+
+		function confirmDeposit (mount) {
+			closeModal(2);
+
+			if (mount === undefined) return;
+
+			depositMount(mount);
+		}
+
+		function depositMount (mount) {
+			for (let i = 0; i < vm.accounts.length; i++) {
+				let account = vm.accounts[i];
+				let bells = parseFloat(account.bells);
+
+				bells += mount * (account.portion/100);
+
+				account.bells = bells;
+			}
+
+			vm.mount = 0.0;
 		}
 
 		function addAccount (account) {
-			if (account.name === undefined || account.name.length <= 0) account.name = "Account " + vm.accounts.length;
-
-			if (!isNumber(account.bells) || account.bells < 0) account.bells = 0;
-
-			if (!isNumber(account.portion) || account.portion < 0 || account.portion > 100) account.portion = 0;
+			if (account.name === undefined || account.name.length === 0) 
+				account.name = "Account # " + (vm.accounts.length+1);
 			
+			if (account.bells === undefined) 
+				account.bells = 0;
+
+			if (account.portion === undefined || portionNotValid(account.portion)) 
+				account.portion = 0;
+
 			vm.accounts.push(account);
 
-			vm.account = {};
+			$scope.account = {};
 
+		}
+
+		function portionNotValid (portion) {
+			let sum = sumOfPortions + portion;
+			
+			sumOfPortions = sum > 100 ? sumOfPortions : sum;
+			
+			return sumOfPortions != sum;
 		}
 
 		function isNumber(n) {
@@ -127,7 +168,21 @@
 		    scope: $scope,
 		    animation: 'slide-in-up'
 		  }).then(function(modal) {
-		    $scope.modal = modal;
+		    $scope.modals[0] = modal;
+		 });
+
+		 // $ionicModal.fromTemplateUrl('../templates/Accounts/add-account-modal.html', {
+		//     scope: $scope,
+		//     animation: 'slide-in-up'
+		//   }).then(function(modal) {
+		//     $scope.modals[1] = modal;
+		//  });
+
+		$ionicModal.fromTemplateUrl('../templates/Accounts/deposit-modal.html', {
+		    scope: $scope,
+		    animation: 'slide-in-up'
+		  }).then(function(modal) {
+		    $scope.modals[2] = modal;
 		 });
 
 	}

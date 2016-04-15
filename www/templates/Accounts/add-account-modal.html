@@ -6,18 +6,18 @@
 		<div class="list">
 		  <label class="item item-input item-stacked-label">
 		    <span class="input-label">Account Name</span>
-		    <input type="text" placeholder="Town" ng-model="vm.account.name">
+		    <input type="text" placeholder="Town" ng-model="account.name">
 		  </label>
 		  <label class="item item-input item-stacked-label">
 		    <span class="input-label">Initial Bells</span>
-		    <input type="text" placeholder="100,400" ng-model="vm.account.bells">
+		    <input type="number" placeholder="100,400" min="0" ng-model="account.bells">
 		  </label>
 		  <label class="item item-input item-stacked-label">
 		    <span class="input-label">Income Percentage</span>
-		    <input type="text" placeholder="30" ng-model="vm.account.portion">
+		    <input type="number" placeholder="30" min="0" max="100" ng-model="account.portion">
 		  </label>
 		</div>
-		<button class="button button-full button-reflection" ng-click="vm.closeModal()">Cancel</button>
-		<button class="button button-full button-balanced" ng-click="vm.confirmAccountCreation()">Confirm</button>
+		<button class="button button-full button-reflection" ng-click="vm.closeModal(0)">Cancel</button>
+		<button class="button button-full button-balanced" ng-click="vm.confirmAccountCreation(account)">Confirm</button>
 	</ion-content>
 </ion-modal-view>

@@ -1,9 +1,5 @@
 .add-account-modal {
 
-	ion-content {
-		// background: #fff;
-	}
-
 	label {
 		border: none;
 		border-bottom: 1px solid #fff;
@@ -13,7 +9,7 @@
 		}
 	}
 
-	input[type="text"] {
+	input[type="text"], input[type="number"] {
 		background: #324851;
 		color: #fff;
 	}
