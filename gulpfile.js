@@ -15,7 +15,7 @@ var paths = {
   templates: [ './app/components/**/*.html', './app/shared/**/*.html' ]
 };
 
-gulp.task('default', ['sass']);
+gulp.task('default', ['sass', 'js', 'zy-sass', 'templates']);
 
 gulp.task('js', function() {
   return gulp.src(paths.js)

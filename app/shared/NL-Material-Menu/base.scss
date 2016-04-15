@@ -1,0 +1,16 @@
+.options {
+	nl-mat-btn {
+		position: absolute;
+		z-index: 0;
+
+		&.ng-hide {
+			animation: slide-down .3s linear forwards;
+		}
+
+		@keyframes slide-down {
+			to {
+				bottom: 0;
+			}
+		}
+	}
+}

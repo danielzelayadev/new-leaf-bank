@@ -1,0 +1,11 @@
+<nl-mat-btn icon-class="{{mainBtnIcon}}" 
+			ng-click="mainBtnClicked()">
+</nl-mat-btn>
+<div class="options">
+	<nl-mat-btn id="opt{{$index}}" ng-show="toggleOptions" 
+				ng-repeat="option in options" 
+				icon-class="{{option.iconClass}}"
+				image-source="{{option.imageSource}}" 
+				ng-click="option.clicked()">
+	</nl-mat-btn>
+</div>
