@@ -1,5 +1,5 @@
-<nl-mat-btn icon-class="ion-navicon-round" 
-			clicked="toggleOptions = !toggleOptions">
+<nl-mat-btn icon-class="{{mainBtnIcon}}" 
+			clicked="mainBtnClicked()">
 </nl-mat-btn>
 <div class="options">
 	<nl-mat-btn id="opt{{$index}}" ng-show="toggleOptions" 
