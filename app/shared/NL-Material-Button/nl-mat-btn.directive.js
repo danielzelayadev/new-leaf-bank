@@ -12,8 +12,7 @@
             restrict: 'E',
             scope: {
             	imageSource: '@?',
-				iconClass: '@?',
-				clicked: '&?'
+				iconClass: '@?'
             },
             templateUrl: '../templates/NL-Material-Button/nl-mat-btn.html'
         };
