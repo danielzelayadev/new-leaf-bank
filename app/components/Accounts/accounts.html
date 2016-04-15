@@ -17,8 +17,5 @@
 		  	</div>
 		</div>
 	</ion-content>
-	<div class="mat-btn lowest right" ng-click="vm.toggleMenu = !vm.toggleMenu"><i ng-class="vm.toggleMenu ? 'ion-close-round' : 'ion-navicon-round'"></i></div>
-	<div class="mat-btn second-lowest right" ng-click="vm.openModal(0)" ng-show="vm.toggleMenu"><i class="ion-plus-round"></i></div>
-	<div class="mat-btn third-lowest right" ng-show="vm.toggleMenu"><img src="../img/withdraw.png"></div>
-	<div class="mat-btn fourth-lowest right" ng-click="vm.openModal(2)" ng-show="vm.toggleMenu"><img src="../img/deposit.png"></div>
+	<nl-mat-menu options=""></nl-mat-menu>
 </ion-view>
