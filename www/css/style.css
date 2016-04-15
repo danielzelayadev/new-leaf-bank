@@ -1,3 +1,6 @@
+.Accounts ion-content {
+  background: #324851; }
+
 .Accounts .card {
   /* border-top: 3px solid #886aea; */
   cursor: pointer; }
@@ -77,24 +80,16 @@
   to {
     top: 90%; } }
 
-.add-account-modal label {
+.nl-modal label {
   border: none;
   border-bottom: 1px solid #fff; }
-  .add-account-modal label span {
+  .nl-modal label span {
     color: #fff; }
 
-.add-account-modal input[type="text"], .add-account-modal input[type="number"] {
+.nl-modal input[type="text"], .nl-modal input[type="number"] {
   background: #324851;
   color: #fff; }
 
-.add-account-modal .button-reflection {
+.nl-modal .button-reflection {
   color: #fff;
   background: #7DA3A1; }
-
-ion-content {
-  background: #324851; }
-
-ion-header-bar i {
-  font-size: 1.7em;
-  align-self: center;
-  margin-left: 90%; }
