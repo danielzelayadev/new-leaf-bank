@@ -12,9 +12,19 @@
 
 		$scope.options = [
 			{
-				iconClass: "ion-key",
+				iconClass: "ion-plus-round",
 				imageSource: "",
-				clicked: function () { console.log("Key!"); }
+				clicked: function () { console.log("Create Account"); }
+			},
+			{
+				iconClass: "",
+				imageSource: "../img/withdraw.png",
+				clicked: function () { console.log("Withdraw"); }
+			},
+			{
+				iconClass: "",
+				imageSource: "../img/deposit.png",
+				clicked: function () { console.log("Deposit"); }
 			}
 		];
 	}

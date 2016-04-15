@@ -9,7 +9,6 @@
 	NlMatMenuController.$inject = [ '$scope' ];
 
 	function NlMatMenuController ($scope) {
-		$scope.toggleOptions = false;
 	}
 
 })();
