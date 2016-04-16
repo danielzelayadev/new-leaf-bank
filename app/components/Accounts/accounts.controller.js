@@ -10,11 +10,11 @@
 	function AccountsController ($scope, $ionicModal) {
 		var vm = this;
 
-		$scope.options = [
+		vm.options = [
 			{
 				iconClass: "ion-plus-round",
 				imageSource: "",
-				clicked: function () { console.log("Create Account"); }
+				clicked: function () { $scope.addAccountModal.show(); }
 			},
 			{
 				iconClass: "",
@@ -27,6 +27,15 @@
 				clicked: function () { console.log("Deposit"); }
 			}
 		];
+
+		$scope.accounts = [];
+
+		$ionicModal.fromTemplateUrl('../templates/NL-Modals/Add Account/add-account-modal.html', {
+    		scope: $scope,
+    		animation: 'slide-in-up'
+  		}).then(function(modal) {
+    		$scope.addAccountModal = modal;
+  		});
 	}
 
 })();
