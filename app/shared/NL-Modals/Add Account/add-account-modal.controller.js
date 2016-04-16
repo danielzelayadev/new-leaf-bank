@@ -21,13 +21,14 @@
 
 		function addAccount () {
 			$scope.accounts.push(vm.account);
-			vm.account = {};
 		}
 
 		function close (form) {
 			form.$setPristine();
+			vm.account = {};
 			$scope.addAccountModal.hide();
 		}
+
 	}
 
 })();
