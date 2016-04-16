@@ -1,6 +1,6 @@
 <ion-view title="Accounts">
 	<ion-content>
-		<div ng-repeat="account in vm.accounts" ng-drop="true" ng-drop-success="vm.reorder($index, $data, $event)">
+		<div ng-repeat="account in accounts" ng-drop="true" ng-drop-success="vm.reorder($index, $data, $event)">
 			<div class="card" ng-drag="true" ng-drag-data="account" draggable="false">
 			  	<span class="item item-avatar">
 				  	<img src="img/leaf.jpg">

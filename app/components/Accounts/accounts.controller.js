@@ -27,7 +27,9 @@
 				clicked: function () { console.log("Deposit"); }
 			}
 		];
-		
+
+		$scope.accounts = [];
+
 		$ionicModal.fromTemplateUrl('../templates/NL-Modals/Add Account/add-account-modal.html', {
     		scope: $scope,
     		animation: 'slide-in-up'

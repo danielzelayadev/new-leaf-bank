@@ -19,4 +19,17 @@
 		background: #7DA3A1;
 	}
 
+	form {
+		.validation-group {
+			margin: 50px 5px;
+
+			.validation {
+				color: #fff;
+				font-weight: bolder;
+				font-size: 1.4em;
+				margin: 10px inherit;
+			}
+		}
+	}
+
 }

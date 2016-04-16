@@ -3,7 +3,26 @@
 	  <h1 class="title">Create Account</h1>
 	</ion-header-bar>
 	<ion-content>
-		<button class="button button-full button-reflection" ng-click="vm.close()">Cancel</button>
-		<button class="button button-full button-balanced" ng-click="addAccountModal.hide()">Confirm</button>
+		<form name="addAccount" ng-submit="addAccount.$valid && vm.submit(addAccount)" novalidate>
+			<div class="list">
+			  <label class="item item-input item-stacked-label">
+			    <span class="input-label">Account Name</span>
+			    <input type="text" name="accountName" placeholder="Town" ng-model="vm.account.name" required="">
+			  </label>
+			  <label class="item item-input item-stacked-label">
+			    <span class="input-label">Initial Bells</span>
+			    <input type="number" placeholder="100,400" min="0" ng-model="vm.account.bells" required="">
+			  </label>
+			  <label class="item item-input item-stacked-label">
+			    <span class="input-label">Income Percentage</span>
+			    <input type="number" placeholder="30" min="0" max="100" ng-model="vm.account.portion" required="">
+			  </label>
+			</div>
+			<div class="validation-group" ng-show="addAccount.$submitted">
+				<p class="validation" ng-show="addAccount.accountName.$error.required">* Please provide an account name.</p>
+			</div>
+			<button class="button button-full button-reflection" type="reset" ng-click="vm.close(addAccount)">Cancel</button>
+			<button class="button button-full button-balanced" type="submit">Confirm</button>
+		</form>
 	</ion-content>
 </ion-modal-view>
