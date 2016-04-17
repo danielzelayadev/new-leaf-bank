@@ -7,9 +7,13 @@
 		span {
 			color: #fff;
 		}
+
+		&.item-select {
+			margin-top: 15px;
+		}
 	}
 
-	input[type="text"], input[type="number"] {
+	input[type="text"], input[type="number"], .item-select, .input-label, select {
 		background: #324851;
 		color: #fff;
 	}
