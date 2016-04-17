@@ -11,3 +11,8 @@ New Leaf Bank is a companion app for true AC gamers created to help manage their
 - Set an Income Share
 - Withdraw
 - Deposit
+
+## Screen Captures
+
+![](http://s23.postimg.org/jicacw557/Screenshot_from_2016_04_17_02_56_21.png)
+![](http://s23.postimg.org/7111bzkln/Screenshot_from_2016_04_17_02_56_36.png)
