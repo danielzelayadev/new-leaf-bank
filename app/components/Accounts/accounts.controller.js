@@ -24,7 +24,7 @@
 			{
 				iconClass: "",
 				imageSource: "../img/deposit.png",
-				clicked: function () { console.log("Deposit"); }
+				clicked: function () { $scope.depositModal.show(); }
 			}
 		];
 
@@ -35,6 +35,13 @@
     		animation: 'slide-in-up'
   		}).then(function(modal) {
     		$scope.addAccountModal = modal;
+  		});
+
+  		$ionicModal.fromTemplateUrl('../templates/NL-Modals/Deposit/deposit-modal.html', {
+    		scope: $scope,
+    		animation: 'slide-in-up'
+  		}).then(function(modal) {
+    		$scope.depositModal = modal;
   		});
 	}
 
