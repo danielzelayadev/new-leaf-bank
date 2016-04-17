@@ -6,7 +6,7 @@
 				  	<img src="img/leaf.jpg">
 				  	<h2 ng-click="vm.toggleAccountNameTb($index)" ng-hide="vm.accountNameTbs[$index]">{{account.name}}</h2>
 				  	<input type="text" ng-model="account.name" ng-show="vm.accountNameTbs[$index]" ng-blur="vm.toggleAccountNameTb($index)">
-				  	<i class="icon ion-close-round" ng-click="vm.removeAccountClicked($index, account.name)"></i>
+				  	<i class="icon ion-close-round" ng-click="vm.deleteAccount($index, account.name)"></i>
 			  	</span>
 			  	<span class="item item-text-wrap">
 			  		Bells: {{account.bells | currency: &apos;$ &apos;}}
