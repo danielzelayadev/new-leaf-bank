@@ -19,7 +19,7 @@
 			{
 				iconClass: "",
 				imageSource: "../img/withdraw.png",
-				clicked: function () { console.log("Withdraw"); }
+				clicked: function () { $scope.withdrawModal.show(); }
 			},
 			{
 				iconClass: "",
@@ -42,6 +42,13 @@
     		animation: 'slide-in-up'
   		}).then(function(modal) {
     		$scope.depositModal = modal;
+  		});
+
+  		$ionicModal.fromTemplateUrl('../templates/NL-Modals/Withdraw/withdraw-modal.html', {
+    		scope: $scope,
+    		animation: 'slide-in-up'
+  		}).then(function(modal) {
+    		$scope.withdrawModal = modal;
   		});
 	}
 
