@@ -1,4 +1,4 @@
-<ion-modal-view class="nl-modal">
+<ion-modal-view class="nl-modal" ng-controller="WithdrawModalController as vm">
 	<ion-header-bar class="bar-balanced">
 	  <h1 class="title">Withdraw</h1>
 	</ion-header-bar>
@@ -13,8 +13,8 @@
 			    <div class="input-label">
 			      Account
 			    </div>
-			    <select>
-			      <option ng-repeat="account in accounts">{{account.name}}</option>
+			    <select name="accounts" ng-model="vm.accountIndex" nl-select>
+			      <option ng-repeat="account in accounts" value="{{$index}}">{{account.name}}</option>
 			    </select>
 			  </label>
 			</div>
@@ -32,8 +32,12 @@
 					* Mount field has invalid character(s).
 				</p>
 
+				<p class="validation" ng-show="withdrawForm.accounts.$error.nlSelect">
+					* Please select an account.
+				</p>
+
 			</div>
-			<button class="button button-full button-reflection" ng-click="vm.close(withdrawForm)">Cancel</button>
+			<button class="button button-full button-reflection" type="reset" ng-click="vm.close(withdrawForm)">Cancel</button>
 			<button class="button button-full button-balanced" type="submit">Confirm</button>
 		</form>
 	</ion-content>
