@@ -7,17 +7,21 @@
 			<div class="list">
 			  <label class="item item-input item-stacked-label">
 			    <span class="input-label">Mount</span>
-			    <input type="number" name="mount" placeholder="0.0" min="0" ng-model="vm.mount">
+			    <input type="number" name="mount" placeholder="0.0" min="0" ng-model="vm.mount" required="">
 			  </label>
 			</div>
 			<div class="validation-group" ng-show="depositForm.$submitted && depositForm.$invalid">
+
+				<p class="validation" ng-show="depositForm.mount.$error.required">
+					* Please provide a mount.
+				</p>
 
 				<p class="validation" ng-show="depositForm.mount.$dirty && depositForm.mount.$error.min">
 					* Mount must be a positive amount.
 				</p>
 
-				<p class="validation" ng-show="depositForm.mount.$dirty && !depositForm.mount.$error.min && depositForm.mount.$invalid">
-					* Income Share field has invalid character(s).
+				<p class="validation" ng-show="!depositForm.mount.$error.required && depositForm.mount.$dirty && !depositForm.mount.$error.min && depositForm.mount.$invalid">
+					* Mount field has invalid character(s).
 				</p>
 
 			</div>
