@@ -5,9 +5,9 @@
 	angular.module('ACBank')
 		.controller('AccountsController', AccountsController);
 
-	AccountsController.$inject = [ '$scope', '$ionicModal' ];
+	AccountsController.$inject = [ '$scope', '$ionicModal', 'Accounts' ];
 
-	function AccountsController ($scope, $ionicModal) {
+	function AccountsController ($scope, $ionicModal, Accounts) {
 		var vm = this;
 
 		vm.options = [
@@ -28,7 +28,7 @@
 			}
 		];
 
-		$scope.accounts = [];
+		$scope.accounts = Accounts.getAll();
 
 		$ionicModal.fromTemplateUrl('../templates/NL-Modals/Add Account/add-account-modal.html', {
     		scope: $scope,
