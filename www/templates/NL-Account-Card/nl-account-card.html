@@ -1,16 +1,14 @@
-<div ng-drop="true" ng-drop-success="vm.reorder($index, $data, $event)">
-	<div class="card" ng-drag="true" ng-drag-data="account" draggable="false">
-	  	<span class="item item-avatar">
-		  	<img src="img/leaf.jpg">
-		  	<h2>{{account.name}}</h2>
-		  	<i class="icon ion-close-round" ng-click="vm.deleteAccount($index, account.name)"
-		  	   ng-hide="context === undefined"></i>
-	  	</span>
-	  	<span class="item item-text-wrap">
-	  		Bells: {{account.bells | currency: &apos;$ &apos;}}
-	  	</span>
-	  	<span class="item item-text-wrap">
-	  		Share: {{account.share}}%
-	  	</span>
-	</div>
+<div class="card">
+  	<span class="item item-avatar">
+	  	<img src="img/leaf.jpg">
+	  	<h2>{{account.name}}</h2>
+	  	<i class="icon ion-close-round" ng-click="vm.deleteAccount($index, account.name)"
+	  	   ng-hide="context === undefined"></i>
+  	</span>
+  	<span class="item item-text-wrap">
+  		Bells: {{account.bells | currency: &apos;$ &apos;}}
+  	</span>
+  	<span class="item item-text-wrap">
+  		Share: {{account.share}}%
+  	</span>
 </div>

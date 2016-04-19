@@ -10,12 +10,7 @@
 	function NlAccountCardController ($scope, $ionicPopup) {
 		var vm = this;
 
-		vm.reorder = reorder;
 		vm.deleteAccount = deleteAccount;
-
-		function reorder ($index, $data, $event) {
-
-		}
 
 		function deleteAccount ($index, name) {
 		    let confirmPopup = $ionicPopup.confirm({
