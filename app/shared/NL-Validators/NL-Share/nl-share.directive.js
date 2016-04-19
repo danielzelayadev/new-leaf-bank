@@ -4,9 +4,9 @@
 
 	angular
 		.module('ACBank')
-		.directive('nlPortion', nlPortion);
+		.directive('nlShare', nlShare);
 
-	function nlPortion () { 
+	function nlShare () { 
 		var directive = 
         {
             require: 'ngModel',
@@ -17,10 +17,10 @@
 		return directive; 
 
 		function link (scope, element, attr, ctrl) {
-			ctrl.$validators.nlPortion = function (modelValue, viewValue) {
+			ctrl.$validators.nlShare = function (modelValue, viewValue) {
 		        let sum = 0;
 		        for (let i = 0; i < scope.accounts.length; i++) {
-		        	sum += scope.accounts[i].portion;
+		        	sum += scope.accounts[i].share;
 		        }
 
 		        return sum + modelValue <= 100;

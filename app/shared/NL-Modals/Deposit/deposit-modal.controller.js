@@ -23,7 +23,7 @@
 			for (let i = 0; i < $scope.accounts.length; i++) {
 				let account = $scope.accounts[i];
 
-				account.bells += (vm.mount * (account.portion/100));
+				account.bells += (vm.mount * (account.share/100));
 			}
 		}
 
