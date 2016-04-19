@@ -7,33 +7,24 @@
 
   function Accounts () {
     var service = {
-      getAll: getAll,
       get: get,
-      saveAll: saveAll,
       save: save
     };
 
     return service;
 
-    function getAll () {
+    function get () {
       let accountString = window.localStorage['accounts'];
       if (accountString) {
-        return angular.fromJson(projectString);
+        return angular.fromJson(accountString);
       }
       return [];
     }
 
-    function get () {
-
+    function save (accounts) {
+      window.localStorage['accounts'] = angular.toJson(accounts);
     }
 
-    function saveAll () {
-
-    }
-
-    function save () {
-
-    }
   }
 
 })();

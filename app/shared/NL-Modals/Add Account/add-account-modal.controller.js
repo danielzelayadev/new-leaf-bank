@@ -5,9 +5,9 @@
 	angular.module('ACBank')
 		.controller('AddAccountModalController', AddAccountModalController);
 
-	AddAccountModalController.$inject = [ '$scope' ];
+	AddAccountModalController.$inject = [ '$scope', 'Accounts' ];
 
-	function AddAccountModalController ($scope) {
+	function AddAccountModalController ($scope, Accounts) {
 		var vm = this;
 
 		vm.account = {};
@@ -21,6 +21,7 @@
 
 		function addAccount () {
 			$scope.accounts.push(vm.account);
+			Accounts.save($scope.accounts);
 		}
 
 		function close (form) {

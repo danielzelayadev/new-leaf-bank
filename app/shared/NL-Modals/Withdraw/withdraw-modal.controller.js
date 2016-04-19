@@ -5,9 +5,9 @@
 	angular.module('ACBank')
 		.controller('WithdrawModalController', WithdrawModalController);
 
-	WithdrawModalController.$inject = [ '$scope' ];
+	WithdrawModalController.$inject = [ '$scope', 'Accounts' ];
 
-	function WithdrawModalController ($scope) {
+	function WithdrawModalController ($scope, Accounts) {
 		var vm = this;
 
 		vm.mount = 0.0;
@@ -28,6 +28,7 @@
 
 		function withdraw () {
 			vm.selectedAccount.bells -= vm.mount;
+			Accounts.save($scope.accounts);
 		}
 
 		function close (form) {

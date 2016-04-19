@@ -5,9 +5,9 @@
 	angular.module('ACBank')
 		.controller('NlAccountCardController', NlAccountCardController);
 
-	NlAccountCardController.$inject = [ '$scope', '$ionicPopup' ];
+	NlAccountCardController.$inject = [ '$scope', '$ionicPopup', 'Accounts' ];
 
-	function NlAccountCardController ($scope, $ionicPopup) {
+	function NlAccountCardController ($scope, $ionicPopup, Accounts) {
 		var vm = this;
 
 		vm.deleteAccount = deleteAccount;
@@ -19,8 +19,10 @@
 		   	});
 
 		   	confirmPopup.then( function (res) {
-			    if(res)
-			        $scope.context.splice($index, 1);
+			    if(res) {
+			    	$scope.context.splice($index, 1);
+			    	Accounts.save($scope.context);
+			    }
 		   });
 		};
 	}

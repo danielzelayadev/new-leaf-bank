@@ -5,9 +5,9 @@
 	angular.module('ACBank')
 		.controller('DepositModalController', DepositModalController);
 
-	DepositModalController.$inject = [ '$scope' ];
+	DepositModalController.$inject = [ '$scope', 'Accounts' ];
 
-	function DepositModalController ($scope) {
+	function DepositModalController ($scope, Accounts) {
 		var vm = this;
 
 		vm.mount = 0.0;
@@ -25,6 +25,7 @@
 
 				account.bells += (vm.mount * (account.share/100));
 			}
+			Accounts.save($scope.accounts);
 		}
 
 		function close (form) {

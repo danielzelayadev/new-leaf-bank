@@ -28,7 +28,7 @@
 			}
 		];
 
-		$scope.accounts = Accounts.getAll();
+		$scope.accounts = Accounts.get();
 
 		$ionicModal.fromTemplateUrl('../templates/NL-Modals/Add Account/add-account-modal.html', {
     		scope: $scope,
