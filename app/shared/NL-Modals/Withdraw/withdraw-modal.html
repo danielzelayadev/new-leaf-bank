@@ -7,13 +7,13 @@
 			<div class="list">
 			  <label class="item item-input item-stacked-label" style="border-bottom: 1px solid #fff;">
 			    <span class="input-label">Mount</span>
-			    <input type="number" name="mount" placeholder="0.0" min="0" ng-model="vm.mount" required="">
+			    <input type="number" name="mount" placeholder="0.0" min="0" max="{{vm.selectedAccount.bells}}" ng-model="vm.mount" required="">
 			  </label>
 			  <label class="item item-input item-select">
 			    <div class="input-label">
 			      Account
 			    </div>
-			    <select name="accounts" ng-model="vm.accountIndex" nl-select>
+			    <select name="accounts" ng-model="vm.accountIndex" ng-change="vm.updateSelectedAccount()" nl-select>
 			      <option ng-repeat="account in accounts" value="{{$index}}">{{account.name}}</option>
 			    </select>
 			  </label>
@@ -28,7 +28,11 @@
 					* Mount must be a positive amount.
 				</p>
 
-				<p class="validation" ng-show="!withdrawForm.mount.$error.required && withdrawForm.mount.$dirty && !withdrawForm.mount.$error.min && withdrawForm.mount.$invalid">
+				<p class="validation" ng-show="withdrawForm.mount.$dirty && withdrawForm.mount.$error.max">
+					* {{vm.selectedAccount.name}} doesn't have that amount of bells.
+				</p>
+
+				<p class="validation" ng-show="!withdrawForm.mount.$error.required && withdrawForm.mount.$dirty && !withdrawForm.mount.$error.min  && !withdrawForm.mount.$error.max && withdrawForm.mount.$invalid">
 					* Mount field has invalid character(s).
 				</p>
 

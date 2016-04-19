@@ -11,9 +11,15 @@
 		var vm = this;
 
 		vm.mount = 0.0;
+		vm.selectedAccount = {};
 		vm.accountIndex = -1;
+		vm.updateSelectedAccount = updateSelectedAccount;
 		vm.submit = submit;
 		vm.close = close;
+
+		function updateSelectedAccount () {
+			vm.selectedAccount = $scope.accounts[vm.accountIndex];
+		}
 
 		function submit (form) {
 			withdraw();
@@ -21,10 +27,7 @@
 		}
 
 		function withdraw () {
-			let account = $scope.accounts[vm.accountIndex];
-			account.bells -= vm.mount;
-
-			if (account.bells < 0) account.bells = 0;
+			vm.selectedAccount.bells -= vm.mount;
 		}
 
 		function close (form) {
