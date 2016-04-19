@@ -4,24 +4,6 @@
 		background: #324851;
 	}
 
-	.card {
-		cursor: pointer;
-	}
-
-	.item.item-avatar {
-
-		i {
-			position: absolute;
-			top: 30%;
-			right: 5%;
-
-			&:hover {
-				color: #888;
-			}
-		}
-
-	}
-
 	nl-mat-menu {
 		position: absolute;
 		top: 90%;

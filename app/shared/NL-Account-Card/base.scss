@@ -1,0 +1,19 @@
+nl-account-card {
+	.card {
+		cursor: pointer;
+	}
+
+	.item.item-avatar {
+
+		i {
+			position: absolute;
+			top: 30%;
+			right: 5%;
+
+			&:hover {
+				color: #888;
+			}
+		}
+
+	}
+}

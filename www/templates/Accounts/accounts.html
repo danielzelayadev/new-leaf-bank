@@ -1,21 +1,9 @@
 <ion-view title="Accounts">
 	<ion-content>
-		<div ng-repeat="account in accounts" ng-drop="true" ng-drop-success="vm.reorder($index, $data, $event)">
-			<div class="card" ng-drag="true" ng-drag-data="account" draggable="false">
-			  	<span class="item item-avatar">
-				  	<img src="img/leaf.jpg">
-				  	<h2 ng-click="vm.toggleAccountNameTb($index)" ng-hide="vm.accountNameTbs[$index]">{{account.name}}</h2>
-				  	<input type="text" ng-model="account.name" ng-show="vm.accountNameTbs[$index]" ng-blur="vm.toggleAccountNameTb($index)">
-				  	<i class="icon ion-close-round" ng-click="vm.deleteAccount($index, account.name)"></i>
-			  	</span>
-			  	<span class="item item-text-wrap">
-			  		Bells: {{account.bells | currency: &apos;$ &apos;}}
-			  	</span>
-			  	<span class="item item-text-wrap">
-			  		Share: {{account.share}}%
-			  	</span>
-		  	</div>
-		</div>
+		<nl-account-card ng-repeat="account in accounts" 
+						 account="account"
+						 context="accounts">
+		</nl-account-card>
 	</ion-content>
 	<nl-mat-menu options="vm.options"></nl-mat-menu>
 </ion-view>

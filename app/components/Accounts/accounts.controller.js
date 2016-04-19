@@ -5,9 +5,9 @@
 	angular.module('ACBank')
 		.controller('AccountsController', AccountsController);
 
-	AccountsController.$inject = [ '$scope', '$ionicModal', '$ionicPopup' ];
+	AccountsController.$inject = [ '$scope', '$ionicModal' ];
 
-	function AccountsController ($scope, $ionicModal, $ionicPopup) {
+	function AccountsController ($scope, $ionicModal) {
 		var vm = this;
 
 		vm.options = [
@@ -27,21 +27,8 @@
 				clicked: function () { $scope.depositModal.show(); }
 			}
 		];
-		vm.deleteAccount = deleteAccount;
 
 		$scope.accounts = [];
-
-		function deleteAccount ($index, name) {
-		    let confirmPopup = $ionicPopup.confirm({
-		    	title: 'Delete Account',
-		    	template: 'Are you sure you want to delete ' + name + '?'
-		   	});
-
-		   	confirmPopup.then( function (res) {
-			    if(res)
-			        $scope.accounts.splice($index, 1);
-		   });
-		};
 
 		$ionicModal.fromTemplateUrl('../templates/NL-Modals/Add Account/add-account-modal.html', {
     		scope: $scope,
